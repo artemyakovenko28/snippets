@@ -1,0 +1,5 @@
+kafka:
+  bootstrap-servers: localhost:9092
+spring:
+  main:
+    banner-mode: 'off'

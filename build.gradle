@@ -1,0 +1,52 @@
+buildscript {
+    ext {
+        groovyVersion = "2.5.7"
+        spockVersion = "1.3-groovy-2.5"
+        springBootVersion = "2.1.3.RELEASE"
+        springKafkaVersion = "2.2.5.RELEASE"
+        junitVersion = "4.12"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: "groovy"
+apply plugin: "org.springframework.boot"
+
+group "com.company.javainaction"
+version "1.0-SNAPSHOT"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//sourceSets {
+//    main {
+//        java.srcDir "src/main/java"
+//    }
+//    test {
+//        java.srcDir "src/test/groovy"
+//    }
+//}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("org.codehaus.groovy:groovy-all:${groovyVersion}")
+    compile("org.springframework.kafka:spring-kafka:${springKafkaVersion}")
+    testCompile("junit:junit:${junitVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile("org.springframework.kafka:spring-kafka-test:${springKafkaVersion}")
+    testCompile("org.spockframework:spock-core:${spockVersion}")
+}
+
+bootJar {
+    baseName = "gs-spring-boot"
+    version =  "0.1.0"
+}
