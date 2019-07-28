@@ -46,7 +46,7 @@
 //  private BlockingQueue<ConsumerRecord<String, String>> records;
 //
 //  @ClassRule
-//  public static EmbeddedKafkaRule embeddedKafka =
+//  public static EmbeddedKafkaRule embeddedKafkaRule =
 //      new EmbeddedKafkaRule(1, true, SENDER_TOPIC);
 //
 //  @Before
@@ -54,7 +54,7 @@
 //    // set up the Kafka consumer properties
 //    Map<String, Object> consumerProperties =
 //        KafkaTestUtils.consumerProps("sender", "false",
-//            embeddedKafka.getEmbeddedKafka());
+//            embeddedKafkaRule.getEmbeddedKafka());
 //
 //    // create a Kafka consumer factory
 //    DefaultKafkaConsumerFactory<String, String> consumerFactory =
@@ -88,7 +88,7 @@
 //
 //    // wait until the container has the required number of assigned partitions
 //    ContainerTestUtils.waitForAssignment(container,
-//        embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
+//        embeddedKafkaRule.getEmbeddedKafka().getPartitionsPerTopic());
 //  }
 //
 //  @After

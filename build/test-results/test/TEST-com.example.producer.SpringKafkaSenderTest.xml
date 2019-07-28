@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.producer.SpringKafkaSenderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-28T17:00:44" hostname="WIN-L2KIBR1PVFJ" time="1.409">
+<testsuite name="com.example.producer.SpringKafkaSenderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-28T19:04:34" hostname="WIN-L2KIBR1PVFJ" time="1.324">
   <properties/>
-  <testcase name="testSend" classname="com.example.producer.SpringKafkaSenderTest" time="1.409"/>
-  <system-out><![CDATA[20:00:41.262 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-5615067925090063806\meta.properties
-20:00:41.470 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-5615067925090063806\meta.properties
-20:00:41.965 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:42.925 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - Starting SpringKafkaSenderTest on WIN-L2KIBR1PVFJ with PID 10196 (started by User in E:\JavaStudy\concurrency)
-20:00:42.926 [Test worker] DEBUG c.e.producer.SpringKafkaSenderTest - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.6.RELEASE
-20:00:42.927 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - No active profile set, falling back to default profiles: default
-20:00:43.921 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:44.009 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - Started SpringKafkaSenderTest in 1.16 seconds (JVM running for 99.495)
-20:00:45.225 [Test worker] INFO  com.example.producer.Sender - sending payload='Hello Spring Kafka Sender!'
-20:00:45.258 [-C-1] DEBUG c.e.producer.SpringKafkaSenderTest - test-listener received message='ConsumerRecord(topic = sender.t, partition = 0, offset = 0, CreateTime = 1564333245237, serialized key size = -1, serialized value size = 26, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = Hello Spring Kafka Sender!)'
-20:00:45.824 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:47.019 [NIOServerCxn.Factory:/127.0.0.1:0] WARN  o.a.zookeeper.server.NIOServerCnxn - Unable to read additional data from client sessionid 0x10006c7cca90001, likely client has closed socket
-20:00:47.934 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:49.451 [NIOServerCxn.Factory:/127.0.0.1:0] WARN  o.a.zookeeper.server.NIOServerCnxn - Unable to read additional data from client sessionid 0x10006c7cca90000, likely client has closed socket
-20:00:49.794 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+  <testcase name="testSend" classname="com.example.producer.SpringKafkaSenderTest" time="1.324"/>
+  <system-out><![CDATA[22:04:31.090 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:32.008 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-8795024692630199051\meta.properties
+22:04:32.220 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-8795024692630199051\meta.properties
+22:04:32.948 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:33.315 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - Starting SpringKafkaSenderTest on WIN-L2KIBR1PVFJ with PID 6472 (started by User in E:\JavaStudy\concurrency)
+22:04:33.317 [Test worker] DEBUG c.e.producer.SpringKafkaSenderTest - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.6.RELEASE
+22:04:33.318 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - No active profile set, falling back to default profiles: default
+22:04:34.351 [Test worker] INFO  c.e.producer.SpringKafkaSenderTest - Started SpringKafkaSenderTest in 1.105 seconds (JVM running for 26.542)
+22:04:34.961 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:35.558 [Test worker] INFO  com.example.producer.Sender - sending payload='Hello Spring Kafka Sender!'
+22:04:35.589 [-C-1] DEBUG c.e.producer.SpringKafkaSenderTest - test-listener received message='ConsumerRecord(topic = sender.t, partition = 0, offset = 0, CreateTime = 1564340675572, serialized key size = -1, serialized value size = 26, headers = RecordHeaders(headers = [], isReadOnly = false), key = null, value = Hello Spring Kafka Sender!)'
+22:04:37.169 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:37.220 [NIOServerCxn.Factory:/127.0.0.1:0] WARN  o.a.zookeeper.server.NIOServerCnxn - Unable to read additional data from client sessionid 0x10007392eb40001, likely client has closed socket
+22:04:39.329 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

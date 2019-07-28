@@ -83,7 +83,7 @@ class SpringKafkaSenderTest {
 
         // wait until the container has the required number of assigned partitions
 //        ContainerTestUtils.waitForAssignment(container,
-//                embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
+//                embeddedKafkaRule.getEmbeddedKafka().getPartitionsPerTopic());
     }
 
     @After

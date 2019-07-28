@@ -30,8 +30,7 @@ import static org.springframework.kafka.test.hamcrest.KafkaMatchers.hasValue
 @DirtiesContext
 class SpringKafkaSenderTest {
 
-    private static final Logger LOGGER =
-            LoggerFactory.getLogger(SpringKafkaSenderTest.class);
+    private static final Logger log = LoggerFactory.getLogger(SpringKafkaSenderTest.class);
 
     private static String SENDER_TOPIC = "sender.t";
 
@@ -43,39 +42,33 @@ class SpringKafkaSenderTest {
     private BlockingQueue<ConsumerRecord<String, String>> records;
 
     @ClassRule
-    public static EmbeddedKafkaRule embeddedKafka =
-            new EmbeddedKafkaRule(1, true, SENDER_TOPIC);
+    public static EmbeddedKafkaRule embeddedKafkaRule = new EmbeddedKafkaRule(1, true, SENDER_TOPIC);
 
     @Before
     void setUp() throws Exception {
         // set up the Kafka consumer properties
         Map<String, Object> consumerProperties =
-                KafkaTestUtils.consumerProps("sender", "false",
-                        embeddedKafka.getEmbeddedKafka());
+                KafkaTestUtils.consumerProps("sender", "false", embeddedKafkaRule.getEmbeddedKafka());
 
         // create a Kafka consumer factory
         DefaultKafkaConsumerFactory<String, String> consumerFactory =
-                new DefaultKafkaConsumerFactory<String, String>(
-                        consumerProperties);
+                new DefaultKafkaConsumerFactory<String, String>(consumerProperties);
 
         // set the topic that needs to be consumed
-        ContainerProperties containerProperties =
-                new ContainerProperties(SENDER_TOPIC);
+        ContainerProperties containerProperties = new ContainerProperties(SENDER_TOPIC);
 
         // create a Kafka MessageListenerContainer
-        container = new KafkaMessageListenerContainer<>(consumerFactory,
-                containerProperties);
+        container = new KafkaMessageListenerContainer<>(consumerFactory, containerProperties);
 
         // create a thread safe queue to store the received message
         records = new LinkedBlockingQueue<>();
 
         // setup a Kafka message listener
-        container
-                .setupMessageListener(new MessageListener<String, String>() {
+        container.setupMessageListener(new MessageListener<String, String>() {
                     @Override
-                    public void onMessage(
+                    void onMessage(
                             ConsumerRecord<String, String> record) {
-                        LOGGER.debug("test-listener received message='{}'", record.toString());
+                        log.debug("test-listener received message='{}'", record.toString());
                         records.add(record);
                     }
                 });
@@ -84,8 +77,7 @@ class SpringKafkaSenderTest {
         container.start();
 
         // wait until the container has the required number of assigned partitions
-        ContainerTestUtils.waitForAssignment(container,
-                embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
+        ContainerTestUtils.waitForAssignment(container, embeddedKafkaRule.getEmbeddedKafka().getPartitionsPerTopic());
     }
 
     @After
@@ -101,8 +93,7 @@ class SpringKafkaSenderTest {
         sender.send(greeting);
 
         // check that the message was received
-        ConsumerRecord<String, String> received =
-                records.poll(10, TimeUnit.SECONDS);
+        ConsumerRecord<String, String> received = records.poll(10, TimeUnit.SECONDS);
         // Hamcrest Matchers to check the value
         Assert.assertThat(received, hasValue(greeting));
         // AssertJ Condition to check the key

@@ -42,7 +42,7 @@
 //  private KafkaListenerEndpointRegistry kafkaListenerEndpointRegistry;
 //
 //  @ClassRule
-//  public static EmbeddedKafkaRule embeddedKafka =
+//  public static EmbeddedKafkaRule embeddedKafkaRule =
 //      new EmbeddedKafkaRule(1, true, RECEIVER_TOPIC);
 //
 //  @Before
@@ -50,7 +50,7 @@
 //    // set up the Kafka producer properties
 //    Map<String, Object> senderProperties =
 //        KafkaTestUtils.senderProps(
-//            embeddedKafka.getEmbeddedKafka().getBrokersAsString());
+//            embeddedKafkaRule.getEmbeddedKafka().getBrokersAsString());
 //
 //    // create a Kafka producer factory
 //    ProducerFactory<String, String> producerFactory =
@@ -66,7 +66,7 @@
 //    for (MessageListenerContainer messageListenerContainer : kafkaListenerEndpointRegistry
 //        .getListenerContainers()) {
 //      ContainerTestUtils.waitForAssignment(messageListenerContainer,
-//          embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
+//          embeddedKafkaRule.getEmbeddedKafka().getPartitionsPerTopic());
 //    }
 //  }
 //

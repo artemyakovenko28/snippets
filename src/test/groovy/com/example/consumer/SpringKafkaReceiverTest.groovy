@@ -49,13 +49,11 @@ class SpringKafkaReceiverTest {
     void setUp() throws Exception {
         // set up the Kafka producer properties
         Map<String, Object> senderProperties =
-                KafkaTestUtils.senderProps(
-                        embeddedKafka.getEmbeddedKafka().getBrokersAsString());
+                KafkaTestUtils.senderProps(embeddedKafka.getEmbeddedKafka().getBrokersAsString());
 
         // create a Kafka producer factory
         ProducerFactory<String, String> producerFactory =
-                new DefaultKafkaProducerFactory<String, String>(
-                        senderProperties);
+                new DefaultKafkaProducerFactory<String, String>(senderProperties);
 
         // create a Kafka template
         template = new KafkaTemplate<>(producerFactory);

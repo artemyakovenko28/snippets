@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.consumer.SpringKafkaReceiverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-28T17:00:26" hostname="WIN-L2KIBR1PVFJ" time="6.206">
+<testsuite name="com.example.consumer.SpringKafkaReceiverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-28T19:04:24" hostname="WIN-L2KIBR1PVFJ" time="1.663">
   <properties/>
-  <testcase name="testReceive" classname="com.example.consumer.SpringKafkaReceiverTest" time="6.206"/>
-  <system-out><![CDATA[20:00:09.133 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-50348557898486331\meta.properties
-20:00:11.924 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-50348557898486331\meta.properties
-20:00:21.103 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - Starting SpringKafkaReceiverTest on WIN-L2KIBR1PVFJ with PID 10196 (started by User in E:\JavaStudy\concurrency)
-20:00:21.103 [Test worker] DEBUG c.e.consumer.SpringKafkaReceiverTest - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.6.RELEASE
-20:00:21.105 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - No active profile set, falling back to default profiles: default
-20:00:26.660 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - Started SpringKafkaReceiverTest in 8.825 seconds (JVM running for 82.146)
-20:00:31.784 [Test worker] DEBUG c.e.consumer.SpringKafkaReceiverTest - test-sender sent message='Hello Spring Kafka Receiver!'
-20:00:32.448 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  com.example.consumer.Receiver - received payload='Hello Spring Kafka Receiver!'
-20:00:34.176 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:35.280 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:36.536 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:37.893 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
-20:00:39.803 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+  <testcase name="testReceive" classname="com.example.consumer.SpringKafkaReceiverTest" time="1.663"/>
+  <system-out><![CDATA[22:04:19.152 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-7668040644976033571\meta.properties
+22:04:20.122 [Test worker] WARN  k.server.BrokerMetadataCheckpoint - No meta.properties file under dir C:\Users\User\AppData\Local\Temp\kafka-7668040644976033571\meta.properties
+22:04:22.624 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - Starting SpringKafkaReceiverTest on WIN-L2KIBR1PVFJ with PID 6472 (started by User in E:\JavaStudy\concurrency)
+22:04:22.626 [Test worker] DEBUG c.e.consumer.SpringKafkaReceiverTest - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.6.RELEASE
+22:04:22.627 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - No active profile set, falling back to default profiles: default
+22:04:24.398 [Test worker] INFO  c.e.consumer.SpringKafkaReceiverTest - Started SpringKafkaReceiverTest in 2.303 seconds (JVM running for 16.589)
+22:04:25.946 [Test worker] DEBUG c.e.consumer.SpringKafkaReceiverTest - test-sender sent message='Hello Spring Kafka Receiver!'
+22:04:26.005 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  com.example.consumer.Receiver - received payload='Hello Spring Kafka Receiver!'
+22:04:27.273 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:28.427 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
+22:04:29.683 [kafka-producer-network-thread | producer-1] WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=producer-1] Connection to node 0 could not be established. Broker may not be available.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
