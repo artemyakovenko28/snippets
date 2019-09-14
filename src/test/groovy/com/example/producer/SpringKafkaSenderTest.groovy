@@ -1,6 +1,7 @@
 package com.example.producer
 
 import org.apache.kafka.clients.consumer.ConsumerRecord
+import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.junit.*
 import org.junit.runner.RunWith
 import org.slf4j.Logger
@@ -76,12 +77,14 @@ class SpringKafkaSenderTest {
         // start the container and underlying message listener
         container.start();
 
+
         // wait until the container has the required number of assigned partitions
         ContainerTestUtils.waitForAssignment(container, embeddedKafkaRule.getEmbeddedKafka().getPartitionsPerTopic());
     }
 
     @After
     void tearDown() {
+        new KafkaConsumer<String,String>()
         // stop the container
         container.stop();
     }

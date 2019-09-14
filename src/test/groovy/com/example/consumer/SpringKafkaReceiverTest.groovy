@@ -34,7 +34,7 @@ class SpringKafkaReceiverTest {
     private static String RECEIVER_TOPIC = "receiver.t";
 
     @Autowired
-    private Receiver receiver;
+    private Receiver receiver
 
     private KafkaTemplate<String, String> template;
 
